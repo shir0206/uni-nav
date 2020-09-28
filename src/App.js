@@ -13,8 +13,15 @@ import {formatRelative} from "date-fns";
 
 function App() {
 
-const libraries = ["places"];
-
+  const libraries = ["places"];
+  const mapContainerStyle = {
+    width: '100vw',
+    height: '100vh',
+  };
+  const center = {
+    lat: 32.770050,
+    lng: 35.008688,
+  };
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
@@ -25,7 +32,11 @@ const libraries = ["places"];
 
   return (
     <div className="App">
-      map
+      <GoogleMap 
+      mapContainerStyle={mapContainerStyle}
+      zoom={18}
+      center={center}
+      ></GoogleMap>
     </div>
   );
 }
