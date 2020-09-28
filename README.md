@@ -1,3 +1,12 @@
+## Install
+
+`yarn add google-maps-react`
+
+`yarn add date-fns`
+
+`yarn add react-places-autocomplete`
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
