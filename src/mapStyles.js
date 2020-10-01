@@ -1,3 +1,5 @@
+    // styles from: https://snazzymaps.com/
+
 export default [
     {
         "featureType": "landscape.natural",

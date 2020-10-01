@@ -13,30 +13,34 @@ import {formatRelative} from "date-fns";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-
+import "./App.css";
 
 function App() {
 
   const libraries = ["places"];
+
+  // map size style
   const mapContainerStyle = {
     width: '100vw',
     height: '100vh',
   };
+
+
   const center = {
     lat: 32.770050,
     lng: 35.008688,
   };
 
-  // disableDefaultUI: Map, Satellite
-  // zoomControl: +, -
 
-  // styles from: https://snazzymaps.com/
+  // disableDefaultUI Btns: Map, Satellite
+  // zoomControl Btns: +, -
   const options = {
     styles: mapStyles,
     disableDefaultUI: true,
     zoomControl:true,
   };
 
+  //map loading msg
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
@@ -52,12 +56,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Uni-Nav <span>{element}</span></h1>
+      <h4>Uni-Nav <span>{element}</span></h4>
       <GoogleMap 
       mapContainerStyle={mapContainerStyle}
       zoom={18}
       center={center}
       options={options}
+      onClick={(event)=>{console.log(event)}}
       ></GoogleMap>
     </div>
   );
