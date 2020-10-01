@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback }  from 'react';
 
 import{
   GoogleMap,
@@ -16,6 +16,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import "./App.css";
 
 function App() {
+  const [markers, setMarkers] = useState([])
 
   const libraries = ["places"];
 
@@ -53,7 +54,6 @@ function App() {
   const element = <FontAwesomeIcon icon={faCoffee}  />
 
 
-
   return (
     <div className="App">
       <h4>Uni-Nav <span>{element}</span></h4>
@@ -62,7 +62,15 @@ function App() {
       zoom={18}
       center={center}
       options={options}
-      onClick={(event)=>{console.log(event)}}
+      onClick={(event)=>{
+        setMarkers(current => [...current, {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng(),
+          time: new Date(),
+        }]);
+      console.log(event);
+      
+      }}
       ></GoogleMap>
     </div>
   );
