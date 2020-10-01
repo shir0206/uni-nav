@@ -6,6 +6,7 @@ import{
   Marker,
   InfoWindow
 } from "@react-google-maps/api";
+import mapStyles from "./mapStyles";
 import {formatRelative} from "date-fns";
 // import "@reach/combobox/styles.css"
 
@@ -22,6 +23,12 @@ function App() {
     lat: 32.770050,
     lng: 35.008688,
   };
+
+  //https://snazzymaps.com/
+  const options = {
+    styles: mapStyles,
+  };
+
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
@@ -36,6 +43,7 @@ function App() {
       mapContainerStyle={mapContainerStyle}
       zoom={18}
       center={center}
+      options={options}
       ></GoogleMap>
     </div>
   );
