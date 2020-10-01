@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/uni-nav/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/uni-nav/static/js/main.638512a7.chunk.js",
+    "main.js.map": "/uni-nav/static/js/main.638512a7.chunk.js.map",
+    "runtime-main.js": "/uni-nav/static/js/runtime-main.ce9b82a1.js",
+    "runtime-main.js.map": "/uni-nav/static/js/runtime-main.ce9b82a1.js.map",
+    "static/js/2.53d58b6e.chunk.js": "/uni-nav/static/js/2.53d58b6e.chunk.js",
+    "static/js/2.53d58b6e.chunk.js.map": "/uni-nav/static/js/2.53d58b6e.chunk.js.map",
+    "index.html": "/uni-nav/index.html",
+    "precache-manifest.00c07e97f1a33a5c29c4e4ea64021048.js": "/uni-nav/precache-manifest.00c07e97f1a33a5c29c4e4ea64021048.js",
+    "service-worker.js": "/uni-nav/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/uni-nav/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.53d58b6e.chunk.js.LICENSE.txt": "/uni-nav/static/js/2.53d58b6e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce9b82a1.js",
+    "static/js/2.53d58b6e.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.638512a7.chunk.js"
+  ]
+}
