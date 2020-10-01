@@ -10,6 +10,9 @@ import mapStyles from "./mapStyles";
 import {formatRelative} from "date-fns";
 // import "@reach/combobox/styles.css"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 
 function App() {
@@ -24,9 +27,14 @@ function App() {
     lng: 35.008688,
   };
 
-  //https://snazzymaps.com/
+  // disableDefaultUI: Map, Satellite
+  // zoomControl: +, -
+
+  // styles from: https://snazzymaps.com/
   const options = {
     styles: mapStyles,
+    disableDefaultUI: true,
+    zoomControl:true,
   };
 
   const {isLoaded, loadError} = useLoadScript({
@@ -37,8 +45,14 @@ function App() {
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading maps";
 
+
+  const element = <FontAwesomeIcon icon={faCoffee}  />
+
+
+
   return (
     <div className="App">
+      <h1>Uni-Nav <span>{element}</span></h1>
       <GoogleMap 
       mapContainerStyle={mapContainerStyle}
       zoom={18}
