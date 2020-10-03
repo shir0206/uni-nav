@@ -32,8 +32,11 @@ function App() {
   const libraries = ["places"];
 
   //map loading msg
+  //    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyAb5I39P1GekwpMaU0BEYI75p04ZaoXIbo",
+
     libraries,
   });
 
