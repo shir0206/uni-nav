@@ -50,6 +50,8 @@ function App() {
 
   const element = <FontAwesomeIcon icon={faCoffee} />;
 
+  const markerIcon = "https://www.flaticon.com/svg/static/icons/svg/3528/3528209.svg";
+
   return (
     <div className="App">
       <h4>
@@ -73,15 +75,31 @@ function App() {
         }}
       >
 
-        {/* Add manual marker on the map */}
+        {/* Add manual marker on the map.
+        
+        url = svg source
+        scaledSize = icon size
+        origin = icon location reltivly the mouse click
+        anchor = icon location reltivly the mouse click
+
+        */}
         {markers.map((marker) => (
           <Marker
             key={marker.time.toISOString()}
             position={{ lat: marker.lat, lng: marker.lng }}
+            icon={{
+              url: markerIcon,
+              scaledSize: new window.google.maps.Size(30,30),
+              origin: new window.google.maps.Point(0,0),
+              anchor: new window.google.maps.Point(15,15),
+            
+            }}
+          
+          
           />
         ))}
 
-        
+
       </GoogleMap>
     </div>
   );
