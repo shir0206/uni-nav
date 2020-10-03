@@ -37,11 +37,23 @@
   }
 }
 
-h4{
+h4 {
   position: absolute;
-  top:1em;
-  left:1em;
-  color:rgb(236, 0, 79);
+  top: 1em;
+  left: 1em;
+  color: rgb(236, 0, 79);
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+
+.search {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
   z-index: 10;
   margin: 0;
   padding: 0;
