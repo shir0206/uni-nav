@@ -175,7 +175,14 @@ function Search() {
   return (
     <div className="search">
       <Combobox
-        onSelect={(address) => {
+        onSelect={async (address) => {
+          try {
+            const results = await getGeocode({ address });
+            console.log(results);
+          } catch (error) {
+            console.log("error");
+          }
+
           console.log(address);
         }}
       >
