@@ -18,6 +18,23 @@ import "./App.css";
 function App() {
   const [markers, setMarkers] = useState([]);
 
+  
+  // avoid recreading onclick on every single render of the app
+  const onMapClick = useCallback((event) => {
+    setMarkers((current) => [
+      ...current,
+      {
+        lat: event.latLng.lat(),
+        lng: event.latLng.lng(),
+        time: new Date(),
+      },
+    ]);
+    console.log(event);
+  }, [])
+
+
+
+  
   const libraries = ["places"];
 
   // map size style
@@ -52,6 +69,7 @@ function App() {
 
   const markerIcon = "https://www.flaticon.com/svg/static/icons/svg/3528/3528209.svg";
 
+
   return (
     <div className="App">
       <h4>
@@ -62,17 +80,7 @@ function App() {
         zoom={18}
         center={center}
         options={options}
-        onClick={(event) => {
-          setMarkers((current) => [
-            ...current,
-            {
-              lat: event.latLng.lat(),
-              lng: event.latLng.lng(),
-              time: new Date(),
-            },
-          ]);
-          console.log(event);
-        }}
+        onClick={onMapClick}
       >
 
         {/* Add manual marker on the map.
