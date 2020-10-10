@@ -86,6 +86,11 @@ function App() {
     zoomControl: true,
   };
 
+  const panTo = useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(18);
+  }, []);
+
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading maps";
 
@@ -141,6 +146,37 @@ function App() {
     setSelectedRoute({ lat, lng, route });
   }
 
+  function Locate({ panTo }) {
+    return (
+      <button
+        className="locate"
+        onClick={() => {
+          // navigator.geolocation.getCurrentPosition(success,error,options);
+
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              panTo({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              });
+
+              console.log("your loction: ", position);
+            },
+            () => {
+              console.log("your loction not found");
+            },
+            options
+          );
+        }}
+      >
+        <img
+          src="https://www.flaticon.com/svg/static/icons/svg/744/744848.svg"
+          alt="compass-locate me"
+        ></img>
+      </button>
+    );
+  }
+
   return (
     <div className="App">
       <h4>
@@ -148,6 +184,8 @@ function App() {
       </h4>
 
       <Search></Search>
+
+      <Locate panTo={panTo}></Locate>
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}

@@ -58,3 +58,13 @@ h4 {
   margin: 0;
   padding: 0;
 }
+
+.locate {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  background: none;
+  border: none;
+  z-index: 10;
+}
