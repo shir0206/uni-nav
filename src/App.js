@@ -6,8 +6,6 @@ import {
   Marker,
   InfoWindow,
   Polyline,
-  withScriptjs,
-  withGoogleMap,
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
 import { formatRelative } from "date-fns";
@@ -47,6 +45,7 @@ function App() {
 
   const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [selectedRoute, setSelectedRoute] = useState(null);
 
   // avoid recreading onclick on every single render of the app
   const onMapClick = useCallback((event) => {
@@ -75,8 +74,8 @@ function App() {
   };
 
   const center = {
-    lat: 32.7623612,
-    lng: 35.0200327,
+    lat: 32.761987,
+    lng: 35.018321,
   };
 
   // disableDefaultUI Btns: Map, Satellite
@@ -133,6 +132,15 @@ function App() {
     scale: 4,
   };
 
+  function handleClick(event, route) {
+    let lat = event.latLng.lat();
+    let lng = event.latLng.lng();
+
+    console.log("lat:", lat, " lng:", lng);
+
+    setSelectedRoute({ lat, lng, route });
+  }
+
   return (
     <div className="App">
       <h4>
@@ -151,8 +159,12 @@ function App() {
       >
         <Polyline
           path={roadA}
+          onClick={(e) => {
+            handleClick(e, "A");
+            console.log("roadA");
+          }}
           options={{
-            strokeColor: "#FFFF00",
+            strokeColor: "#FF69B4",
             strokeOpacity: 0,
             strokeWeight: 8,
             icons: [
@@ -167,6 +179,10 @@ function App() {
 
         <Polyline
           path={roadB}
+          onClick={(e) => {
+            handleClick(e, "B");
+            console.log("roadB");
+          }}
           options={{
             strokeColor: "#00FF00",
             strokeOpacity: 0.5,
@@ -183,8 +199,12 @@ function App() {
 
         <Polyline
           path={roadC}
+          onClick={(e) => {
+            handleClick(e, "C");
+            console.log("roadC");
+          }}
           options={{
-            strokeColor: "#FF69B4",
+            strokeColor: "#FFFF00",
             strokeOpacity: 1,
             strokeWeight: 4,
             icons: [
@@ -237,6 +257,33 @@ function App() {
               <p>Time: {formatRelative(selected.time, new Date())}</p>
               <img
                 src="https://www.srugim.co.il/i/wp-content/uploads/2015/06/%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%98%D7%AA-%D7%97%D7%99%D7%A4%D7%94-%D7%90%D7%9C%D7%A2%D7%93-%D7%92%D7%A8%D7%A9%D7%92%D7%95%D7%A8%D7%9F-%D7%98%D7%9E%D7%A7%D7%90__w650h331q80.jpg"
+                alt="uni"
+                width="100px"
+                height="100px"
+              ></img>
+            </div>
+          </InfoWindow>
+        ) : (
+          console.log("fail")
+        )}
+
+        {selectedRoute ? (
+          <InfoWindow
+            position={{ lat: selectedRoute.lat, lng: selectedRoute.lng }}
+            onCloseClick={() => {
+              setSelectedRoute(null);
+            }}
+          >
+            <div>
+              <h2>
+                <span role="img" aria-label="stars">
+                  ✨
+                </span>
+                {selectedRoute.route} מסלול
+              </h2>
+              <p>לה לה לה🍉</p>
+              <img
+                src="https://static.wixstatic.com/media/c8dca1_b0fb31fc412a4ab192045566f189550d~mv2.jpg"
                 alt="uni"
                 width="100px"
                 height="100px"
