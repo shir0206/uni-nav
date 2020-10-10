@@ -6,6 +6,9 @@ import {
   Marker,
   InfoWindow,
   Polyline,
+  withScriptjs,
+  withGoogleMap,
+
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
 import { formatRelative } from "date-fns";
@@ -38,6 +41,8 @@ function App() {
   const { isLoaded, loadError } = useLoadScript({
     // googleMapsApiKey: "AIzaSyAb5I39P1GekwpMaU0BEYI75p04ZaoXIbo",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    region:"IL",
+    language:"iw",
     libraries,
   });
 
