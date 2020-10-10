@@ -8,7 +8,6 @@ import {
   Polyline,
   withScriptjs,
   withGoogleMap,
-
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
 import { formatRelative } from "date-fns";
@@ -41,8 +40,8 @@ function App() {
   const { isLoaded, loadError } = useLoadScript({
     // googleMapsApiKey: "AIzaSyAb5I39P1GekwpMaU0BEYI75p04ZaoXIbo",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    region:"IL",
-    language:"iw",
+    region: "IL",
+    language: "iw",
     libraries,
   });
 
@@ -128,6 +127,12 @@ function App() {
     { lat: 32.761205, lng: 35.020409 },
   ];
 
+  const lineSymbol = {
+    path: "M 0,-1 0,1",
+    strokeOpacity: 1,
+    scale: 4,
+  };
+
   return (
     <div className="App">
       <h4>
@@ -148,13 +153,13 @@ function App() {
           path={roadA}
           options={{
             strokeColor: "#FFFF00",
-            strokeOpacity: 1,
+            strokeOpacity: 0,
             strokeWeight: 8,
             icons: [
               {
-                icon: "hello",
+                icon: lineSymbol,
                 offset: "0",
-                repeat: "10px",
+                repeat: "20px",
               },
             ],
           }}
@@ -227,7 +232,7 @@ function App() {
                 <span role="img" aria-label="bear">
                   🐻
                 </span>
-                Alert
+                שלום
               </h2>
               <p>Time: {formatRelative(selected.time, new Date())}</p>
               <img
