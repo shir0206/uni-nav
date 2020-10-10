@@ -5,6 +5,7 @@ import {
   useLoadScript,
   Marker,
   InfoWindow,
+  Polyline,
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
 import { formatRelative } from "date-fns";
@@ -35,8 +36,8 @@ function App() {
   //    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAb5I39P1GekwpMaU0BEYI75p04ZaoXIbo",
-
+    // googleMapsApiKey: "AIzaSyAb5I39P1GekwpMaU0BEYI75p04ZaoXIbo",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
 
@@ -70,8 +71,8 @@ function App() {
   };
 
   const center = {
-    lat: 32.77005,
-    lng: 35.008688,
+    lat: 32.7623612,
+    lng: 35.0200327,
   };
 
   // disableDefaultUI Btns: Map, Satellite
@@ -88,7 +89,39 @@ function App() {
   const element = <FontAwesomeIcon icon={faCoffee} />;
 
   const markerIcon =
-    "https://www.flaticon.com/svg/static/icons/svg/3528/3528209.svg";
+    "https://www.flaticon.com/svg/static/icons/svg/787/787535.svg";
+
+  const roadA = [
+    { lat: 32.7640483, lng: 35.0166316 },
+    { lat: 32.763692, lng: 35.017082 },
+    { lat: 32.763361, lng: 35.016665 },
+
+    { lat: 32.7620995, lng: 35.0182302 },
+    { lat: 32.7623612, lng: 35.0200327 },
+    { lat: 32.763234, lng: 35.019025 },
+    { lat: 32.7628534, lng: 35.0185092 },
+  ];
+
+  const roadB = [
+    { lat: 32.762666, lng: 35.016366 },
+    { lat: 32.762135, lng: 35.016931 },
+    { lat: 32.761276, lng: 35.018554 },
+    { lat: 32.760545, lng: 35.019495 },
+  ];
+
+  const roadC = [
+    { lat: 32.761987, lng: 35.018321 },
+    { lat: 32.761033, lng: 35.019531 },
+    { lat: 32.761059, lng: 35.019671 },
+    { lat: 32.760919, lng: 35.019733 },
+    { lat: 32.760482, lng: 35.020131 },
+    { lat: 32.760568, lng: 35.020181 },
+    { lat: 32.760706, lng: 35.020186 },
+    { lat: 32.760803, lng: 35.020159 },
+    { lat: 32.760971, lng: 35.02017 },
+    { lat: 32.761009, lng: 35.020162 },
+    { lat: 32.761205, lng: 35.020409 },
+  ];
 
   return (
     <div className="App">
@@ -100,12 +133,59 @@ function App() {
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        zoom={18}
+        zoom={17}
         center={center}
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
       >
+        <Polyline
+          path={roadA}
+          options={{
+            strokeColor: "#FFFF00",
+            strokeOpacity: 1,
+            strokeWeight: 8,
+            icons: [
+              {
+                icon: "hello",
+                offset: "0",
+                repeat: "10px",
+              },
+            ],
+          }}
+        />
+
+        <Polyline
+          path={roadB}
+          options={{
+            strokeColor: "#00FF00",
+            strokeOpacity: 0.5,
+            strokeWeight: 14,
+            icons: [
+              {
+                icon: "hello",
+                offset: "0",
+                repeat: "50px",
+              },
+            ],
+          }}
+        />
+
+        <Polyline
+          path={roadC}
+          options={{
+            strokeColor: "#FF69B4",
+            strokeOpacity: 1,
+            strokeWeight: 4,
+            icons: [
+              {
+                icon: "hello",
+                offset: "0",
+                repeat: "10px",
+              },
+            ],
+          }}
+        />
         {/* Add manual marker on the map.
         
         url = svg source
