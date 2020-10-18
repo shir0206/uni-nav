@@ -147,6 +147,7 @@ function App() {
   }
 
   function Locate({ panTo }) {
+
     return (
       <button
         className="locate"
@@ -176,6 +177,9 @@ function App() {
       </button>
     );
   }
+
+  return <h1>Hi</h1>;
+
 
   return (
     <div className="App">
@@ -319,7 +323,7 @@ function App() {
                 </span>
                 {selectedRoute.route} מסלול
               </h2>
-              <p>לה לה לה🍉</p>
+              <p>לה לה לה<span role="img" aria-label="bear">🍉</span></p>
               <img
                 src="https://static.wixstatic.com/media/c8dca1_b0fb31fc412a4ab192045566f189550d~mv2.jpg"
                 alt="uni"
