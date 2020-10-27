@@ -85,7 +85,7 @@ function App() {
     setUserLocation({ lat, lng });
 
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(18);
+    mapRef.current.setZoom(20);
   }, []);
 
   const panTo2 = useCallback(({ lat, lng }) => {
