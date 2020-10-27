@@ -72,17 +72,15 @@ function App() {
     lng: 35.018321,
   };
 
-  ////////////////////////////////////
-
   const panTo = useCallback(({ lat, lng }) => {
-    setMarkers((current) => [
-      ...current,
-      {
-        lat: lat,
-        lng: lng,
-        time: new Date(),
-      },
-    ]);
+    // setMarkers((current) => [
+    //   ...current,
+    //   {
+    //     lat: lat,
+    //     lng: lng,
+    //     time: new Date(),
+    //   },
+    // ]);
 
     setUserLocation({ lat, lng });
 
@@ -90,7 +88,6 @@ function App() {
     mapRef.current.setZoom(18);
   }, []);
 
-  ////////////////////////////////////
   const panTo2 = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(18);
