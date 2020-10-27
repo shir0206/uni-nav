@@ -1,8 +1,6 @@
 import React from "react";
 import "./locate.css";
 
-import mapStyles from "../mapStyles/mapStyles";
-
 export const Locate = ({ panTo, options }) => {
 
   return (

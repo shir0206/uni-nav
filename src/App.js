@@ -9,6 +9,7 @@ import { Routes } from "./components/Routes";
 import { POIs } from "./components/POIs";
 import { InfoRoute } from "./components/InfoRoute";
 import { InfoPOI } from "./components/InfoPOI";
+import ConnectDB from "./connectDB/connectDB";
 
 import mapStyles from "./mapStyles/mapStyles";
 
@@ -37,6 +38,8 @@ function App() {
     language: "iw",
     libraries,
   });
+
+
 
   // avoid recreading onclick on every single render of the app
   const onMapClick = useCallback((event) => {
@@ -69,7 +72,24 @@ function App() {
     lng: 35.018321,
   };
 
-  const panTo = useCallback(({ lat, lng }) => {
+    ////////////////////////////////////
+
+    const panTo = useCallback(({ lat, lng }) => {
+      setMarkers((current) => [
+        ...current,
+        {
+          lat: lat,
+          lng: lng,
+          time: new Date(),
+        },
+      ]);
+  
+      mapRef.current.panTo({ lat, lng });
+      mapRef.current.setZoom(18);
+    }, []);
+  
+    ////////////////////////////////////
+  const panTo2 = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(18);
   }, []);

@@ -2,6 +2,17 @@
 
 export default [
   {
+    elementType: "labels",
+    stylers: [
+      {
+        visibility: "off",
+      },
+      {
+        color: "#f49f53",
+      },
+    ],
+  },
+  {
     featureType: "landscape.natural",
     elementType: "geometry.fill",
     stylers: [
