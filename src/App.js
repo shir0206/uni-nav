@@ -1,51 +1,42 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  InfoWindow,
-  Polyline,
-} from "@react-google-maps/api";
-import mapStyles from "./mapStyles";
-import { formatRelative } from "date-fns";
+import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from "use-places-autocomplete";
+import { Locate } from "./components/Locate";
+import { MapTitle } from "./components/MapTitle";
+import { Search } from "./components/Search";
+import { Routes } from "./components/Routes";
+import { POIs } from "./components/POIs";
+import { InfoRoute } from "./components/InfoRoute";
+import { InfoPOI } from "./components/InfoPOI";
 
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-} from "@reach/combobox";
-import "@reach/combobox/styles.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import mapStyles from "./mapStyles/mapStyles";
 
 import "./App.css";
 
 function App() {
+  const [markers, setMarkers] = useState([]);
+  const [selected, setSelected] = useState(null);
+  const [selectedRoute, setSelectedRoute] = useState(null);
+
   const libraries = ["places"];
 
-  //map loading msg
-  //    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+  // styles: imported
+  // disableDefaultUI: View Butons: (Map)/(Satellite)
+  // zoomControl: Zoom Butons: (+)/(-)
+  const options = {
+    styles: mapStyles,
+    disableDefaultUI: true,
+    zoomControl: true,
+  };
 
+  //map loading msg
   const { isLoaded, loadError } = useLoadScript({
-    // googleMapsApiKey: "AIzaSyAb5I39P1GekwpMaU0BEYI75p04ZaoXIbo",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     region: "IL",
     language: "iw",
     libraries,
   });
-
-  const [markers, setMarkers] = useState([]);
-  const [selected, setSelected] = useState(null);
-  const [selectedRoute, setSelectedRoute] = useState(null);
 
   // avoid recreading onclick on every single render of the app
   const onMapClick = useCallback((event) => {
@@ -78,14 +69,6 @@ function App() {
     lng: 35.018321,
   };
 
-  // disableDefaultUI Btns: Map, Satellite
-  // zoomControl Btns: +, -
-  const options = {
-    styles: mapStyles,
-    disableDefaultUI: true,
-    zoomControl: true,
-  };
-
   const panTo = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(18);
@@ -94,100 +77,13 @@ function App() {
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading maps";
 
-  const element = <FontAwesomeIcon icon={faCoffee} />;
-
-  const markerIcon =
-    "https://www.flaticon.com/svg/static/icons/svg/787/787535.svg";
-
-  const roadA = [
-    { lat: 32.7640483, lng: 35.0166316 },
-    { lat: 32.763692, lng: 35.017082 },
-    { lat: 32.763361, lng: 35.016665 },
-
-    { lat: 32.7620995, lng: 35.0182302 },
-    { lat: 32.7623612, lng: 35.0200327 },
-    { lat: 32.763234, lng: 35.019025 },
-    { lat: 32.7628534, lng: 35.0185092 },
-  ];
-
-  const roadB = [
-    { lat: 32.762666, lng: 35.016366 },
-    { lat: 32.762135, lng: 35.016931 },
-    { lat: 32.761276, lng: 35.018554 },
-    { lat: 32.760545, lng: 35.019495 },
-  ];
-
-  const roadC = [
-    { lat: 32.761987, lng: 35.018321 },
-    { lat: 32.761033, lng: 35.019531 },
-    { lat: 32.761059, lng: 35.019671 },
-    { lat: 32.760919, lng: 35.019733 },
-    { lat: 32.760482, lng: 35.020131 },
-    { lat: 32.760568, lng: 35.020181 },
-    { lat: 32.760706, lng: 35.020186 },
-    { lat: 32.760803, lng: 35.020159 },
-    { lat: 32.760971, lng: 35.02017 },
-    { lat: 32.761009, lng: 35.020162 },
-    { lat: 32.761205, lng: 35.020409 },
-  ];
-
-  const lineSymbol = {
-    path: "M 0,-1 0,1",
-    strokeOpacity: 1,
-    scale: 4,
-  };
-
-  function handleClick(event, route) {
-    let lat = event.latLng.lat();
-    let lng = event.latLng.lng();
-
-    console.log("lat:", lat, " lng:", lng);
-
-    setSelectedRoute({ lat, lng, route });
-  }
-
-  function Locate({ panTo }) {
-
-    return (
-      <button
-        className="locate"
-        onClick={() => {
-          // navigator.geolocation.getCurrentPosition(success,error,options);
-
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              panTo({
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              });
-
-              console.log("your loction: ", position);
-            },
-            () => {
-              console.log("your loction not found");
-            },
-            options
-          );
-        }}
-      >
-        <img
-          src="https://www.flaticon.com/svg/static/icons/svg/744/744848.svg"
-          alt="compass-locate me"
-        ></img>
-      </button>
-    );
-  }
-
-
   return (
     <div className="App">
-      <h4>
-        Uni-Nav <span>{element}</span>
-      </h4>
+      <MapTitle></MapTitle>
 
       <Search></Search>
 
-      <Locate panTo={panTo}></Locate>
+      <Locate panTo={panTo} options={options}></Locate>
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
@@ -197,191 +93,17 @@ function App() {
         onClick={onMapClick}
         onLoad={onMapLoad}
       >
-        <Polyline
-          path={roadA}
-          onClick={(e) => {
-            handleClick(e, "A");
-            console.log("roadA");
-          }}
-          options={{
-            strokeColor: "#FF69B4",
-            strokeOpacity: 0,
-            strokeWeight: 8,
-            icons: [
-              {
-                icon: lineSymbol,
-                offset: "0",
-                repeat: "20px",
-              },
-            ],
-          }}
-        />
+        <Routes setSelectedRoute={setSelectedRoute}></Routes>
 
-        <Polyline
-          path={roadB}
-          onClick={(e) => {
-            handleClick(e, "B");
-            console.log("roadB");
-          }}
-          options={{
-            strokeColor: "#00FF00",
-            strokeOpacity: 0.5,
-            strokeWeight: 14,
-            icons: [
-              {
-                icon: "hello",
-                offset: "0",
-                repeat: "50px",
-              },
-            ],
-          }}
-        />
+        <POIs markers={markers} setSelected={setSelected}></POIs>
 
-        <Polyline
-          path={roadC}
-          onClick={(e) => {
-            handleClick(e, "C");
-            console.log("roadC");
-          }}
-          options={{
-            strokeColor: "#FFFF00",
-            strokeOpacity: 1,
-            strokeWeight: 4,
-            icons: [
-              {
-                icon: "hello",
-                offset: "0",
-                repeat: "10px",
-              },
-            ],
-          }}
-        />
-        {/* Add manual marker on the map.
-        
-        url = svg source
-        scaledSize = icon size
-        origin = icon location reltivly the mouse click
-        anchor = icon location reltivly the mouse click
+        <InfoPOI selected={selected} setSelected={setSelected}></InfoPOI>
 
-        */}
-        {markers.map((marker) => (
-          <Marker
-            key={marker.time.toISOString()}
-            position={{ lat: marker.lat, lng: marker.lng }}
-            onClick={() => {
-              setSelected(marker);
-            }}
-            icon={{
-              url: markerIcon,
-              scaledSize: new window.google.maps.Size(30, 30),
-              origin: new window.google.maps.Point(0, 0),
-              anchor: new window.google.maps.Point(15, 15),
-            }}
-          />
-        ))}
-
-        {selected ? (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => {
-              setSelected(null);
-            }}
-          >
-            <div>
-              <h2>
-                <span role="img" aria-label="bear">
-                  🐻
-                </span>
-                שלום
-              </h2>
-              <p>Time: {formatRelative(selected.time, new Date())}</p>
-              <img
-                src="https://www.srugim.co.il/i/wp-content/uploads/2015/06/%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%98%D7%AA-%D7%97%D7%99%D7%A4%D7%94-%D7%90%D7%9C%D7%A2%D7%93-%D7%92%D7%A8%D7%A9%D7%92%D7%95%D7%A8%D7%9F-%D7%98%D7%9E%D7%A7%D7%90__w650h331q80.jpg"
-                alt="uni"
-                width="100px"
-                height="100px"
-              ></img>
-            </div>
-          </InfoWindow>
-        ) : (
-          console.log("fail")
-        )}
-
-        {selectedRoute ? (
-          <InfoWindow
-            position={{ lat: selectedRoute.lat, lng: selectedRoute.lng }}
-            onCloseClick={() => {
-              setSelectedRoute(null);
-            }}
-          >
-            <div>
-              <h2>
-                <span role="img" aria-label="stars">
-                  ✨
-                </span>
-                {selectedRoute.route} מסלול
-              </h2>
-              <p>לה לה לה<span role="img" aria-label="bear">🍉</span></p>
-              <img
-                src="https://static.wixstatic.com/media/c8dca1_b0fb31fc412a4ab192045566f189550d~mv2.jpg"
-                alt="uni"
-                width="100px"
-                height="100px"
-              ></img>
-            </div>
-          </InfoWindow>
-        ) : (
-          console.log("fail")
-        )}
+        <InfoRoute
+          selectedRoute={selectedRoute}
+          setSelectedRoute={setSelectedRoute}
+        ></InfoRoute>
       </GoogleMap>
-    </div>
-  );
-}
-
-function Search() {
-  const {
-    ready,
-    value,
-    suggestions: { status, data },
-    setValue,
-    clearSuggestions,
-  } = usePlacesAutocomplete({
-    requestOptions: {
-      location: { lat: () => 32.77005, lng: () => 35.008688 },
-      radius: 200 * 1000,
-    },
-  });
-
-  return (
-    <div className="search">
-      <Combobox
-        onSelect={async (address) => {
-          try {
-            const results = await getGeocode({ address });
-            console.log(results);
-          } catch (error) {
-            console.log("error");
-          }
-
-          console.log(address);
-        }}
-      >
-        <ComboboxInput
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          disabled={!ready}
-          placeholder="Enter an address"
-        />
-
-        <ComboboxPopover>
-          {status === "OK" &&
-            data.map(({ id, description }) => (
-              <ComboboxOption key={id} value={description} />
-            ))}
-        </ComboboxPopover>
-      </Combobox>
     </div>
   );
 }
