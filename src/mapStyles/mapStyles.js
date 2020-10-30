@@ -1,84 +1,93 @@
 // styles imported from: https://snazzymaps.com/
-
 export default [
   {
-    elementType: "labels",
-    stylers: [
+      featureType: "poi",
+      elementType: "geometry.fill",
+      stylers: [
+        {
+          visibility: "on",
+        },
+        {
+          hue: "#1900ff",
+        },
+        {
+          color: "#c0e8e8",
+        },
+      ],
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
+        {
+          lightness: 100,
+        },
+        {
+          visibility: "simplified",
+        },
+      ],
+    },
+    {
+      featureType: "road",
+      elementType: "labels",
+      stylers: [
+        {
+          visibility: "off",
+        },
+      ],
+    },
       {
-        visibility: "off",
-      },
-      {
-        color: "#f49f53",
-      },
-    ],
-  },
-  {
-    featureType: "landscape.natural",
-    elementType: "geometry.fill",
+    featureType: "all",
+    elementType: "labels.text",
     stylers: [
       {
         visibility: "on",
-      },
-      {
-        color: "#e0efef",
-      },
-    ],
-  },
-  {
-    featureType: "poi",
-    elementType: "geometry.fill",
-    stylers: [
-      {
-        visibility: "on",
-      },
-      {
-        hue: "#1900ff",
-      },
-      {
-        color: "#c0e8e8",
       },
     ],
   },
   {
     featureType: "road",
-    elementType: "geometry",
+    elementType: "labels.text.fill",
     stylers: [
       {
-        lightness: 100,
-      },
-      {
-        visibility: "simplified",
+        color: "#7b7b7b",
       },
     ],
   },
-  {
+{
     featureType: "road",
-    elementType: "labels",
+    elementType: "labels.text.stroke",
+    stylers: [
+      {
+        color: "#ffffff",
+      },
+    ],
+  },
+{
+    featureType: "road.arterial",
+    elementType: "labels.icon",
     stylers: [
       {
         visibility: "off",
       },
     ],
   },
-  {
-    featureType: "transit.line",
-    elementType: "geometry",
-    stylers: [
-      {
-        visibility: "on",
-      },
-      {
-        lightness: 700,
-      },
-    ],
-  },
-  {
+{
     featureType: "water",
-    elementType: "all",
+    elementType: "labels.text.fill",
     stylers: [
       {
-        color: "#7dcdcd",
+        color: "#070707",
       },
     ],
   },
-];
+{
+    featureType: "water",
+    elementType: "labels.text.stroke",
+    stylers: [
+      {
+        color: "#ffffff",
+      },
+    ],
+  },
+  ];

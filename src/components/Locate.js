@@ -2,6 +2,15 @@ import React from "react";
 import "./locate.css";
 
 export const Locate = ({ panTo, options }) => {
+  const positionOptions = {
+    timeout: Infinity,
+    maximumAge: 0,
+    enableHighAccuracy: true,
+  };
+
+  function success() {}
+  function error() {}
+  function options() {}
 
   return (
     <button
@@ -20,7 +29,7 @@ export const Locate = ({ panTo, options }) => {
           () => {
             console.log("your loction not found");
           },
-          options
+          positionOptions
         );
       }}
     >

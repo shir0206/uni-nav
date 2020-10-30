@@ -124,7 +124,6 @@ function App() {
         ></InfoRoute>
 
         <UserLocation userLocation={userLocation}></UserLocation>
-
       </GoogleMap>
     </div>
   );
