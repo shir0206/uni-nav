@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/uni-nav/static/css/main.43bbe962.chunk.css",
-    "main.js": "/uni-nav/static/js/main.bbdd624d.chunk.js",
-    "main.js.map": "/uni-nav/static/js/main.bbdd624d.chunk.js.map",
+    "main.css": "/uni-nav/static/css/main.054160f7.chunk.css",
+    "main.js": "/uni-nav/static/js/main.377d2574.chunk.js",
+    "main.js.map": "/uni-nav/static/js/main.377d2574.chunk.js.map",
     "runtime-main.js": "/uni-nav/static/js/runtime-main.ce9b82a1.js",
     "runtime-main.js.map": "/uni-nav/static/js/runtime-main.ce9b82a1.js.map",
     "static/css/2.6eff3e32.chunk.css": "/uni-nav/static/css/2.6eff3e32.chunk.css",
     "static/js/2.c3431d72.chunk.js": "/uni-nav/static/js/2.c3431d72.chunk.js",
     "static/js/2.c3431d72.chunk.js.map": "/uni-nav/static/js/2.c3431d72.chunk.js.map",
     "index.html": "/uni-nav/index.html",
-    "precache-manifest.301d0655a3a6eef68e4edc6ddabccb1d.js": "/uni-nav/precache-manifest.301d0655a3a6eef68e4edc6ddabccb1d.js",
+    "precache-manifest.4efae2969c94e7ebd75d5cfe8116c4f2.js": "/uni-nav/precache-manifest.4efae2969c94e7ebd75d5cfe8116c4f2.js",
     "service-worker.js": "/uni-nav/service-worker.js",
     "static/css/2.6eff3e32.chunk.css.map": "/uni-nav/static/css/2.6eff3e32.chunk.css.map",
-    "static/css/main.43bbe962.chunk.css.map": "/uni-nav/static/css/main.43bbe962.chunk.css.map",
+    "static/css/main.054160f7.chunk.css.map": "/uni-nav/static/css/main.054160f7.chunk.css.map",
     "static/js/2.c3431d72.chunk.js.LICENSE.txt": "/uni-nav/static/js/2.c3431d72.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ce9b82a1.js",
     "static/css/2.6eff3e32.chunk.css",
     "static/js/2.c3431d72.chunk.js",
-    "static/css/main.43bbe962.chunk.css",
-    "static/js/main.bbdd624d.chunk.js"
+    "static/css/main.054160f7.chunk.css",
+    "static/js/main.377d2574.chunk.js"
   ]
 }
