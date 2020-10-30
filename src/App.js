@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
@@ -24,7 +24,16 @@ function App() {
   const [selected, setSelected] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
 
+  const [timer, setTimer] = useState(null);
+
   const libraries = ["places"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer(new Date());
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   // styles: imported
   // disableDefaultUI: View Butons: (Map)/(Satellite)
@@ -78,7 +87,7 @@ function App() {
     setUserLocation({ lat, lng });
 
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(19);
+    mapRef.current.setZoom(18);
   }, []);
 
   if (loadError) return "Error loading maps";
@@ -90,7 +99,7 @@ function App() {
 
       <Search></Search>
 
-      <Locate panTo={panTo} options={options}></Locate>
+      {timer && <Locate panTo={panTo} options={options}></Locate>}
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
@@ -102,11 +111,7 @@ function App() {
       >
         <Routes setSelectedRoute={setSelectedRoute}></Routes>
 
-        <POIs
-          markers={markers}
-          setSelected={setSelected}
-          pois={pois}
-        ></POIs>
+        <POIs markers={markers} setSelected={setSelected} pois={pois}></POIs>
 
         <InfoPOI selected={selected} setSelected={setSelected}></InfoPOI>
 
