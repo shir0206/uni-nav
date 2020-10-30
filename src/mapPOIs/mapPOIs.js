@@ -149,7 +149,7 @@ export default [
     type: "statue",
     name: "19",
     img: "7",
-    desc: "פסל, אמא אוהבת",
+    desc: "אמא אוהבת",
   },
   {
     id: "20",
