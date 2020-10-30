@@ -1,18 +1,19 @@
 import React from "react";
 import "./locate.css";
 
-export const Locate = ({ panTo, options }) => {
+export const Locate = ({ panTo }) => {
   const positionOptions = {
     timeout: Infinity,
     maximumAge: 0,
     enableHighAccuracy: true,
   };
 
+  // navigator.geolocation.getCurrentPosition(success,error,options);
+
   return (
     <button
       className="locate"
       onClick={() => {
-        // navigator.geolocation.getCurrentPosition(success,error,options);
         navigator.geolocation.getCurrentPosition(
           (position) => {
             panTo({

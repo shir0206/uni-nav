@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useCallback, useRef } from "react";
 import "./POIs.css";
 import { Marker } from "@react-google-maps/api";
+import mapPOIs from "../mapPOIs/mapPOIs";
 
 export const POIs = (props) => {
   // Add manual marker on the map.
 
+  const [pois, setPois] = useState([mapPOIs]);
+
+  const poisLocation = mapPOIs;
   const markerIcon =
     "https://www.flaticon.com/svg/static/icons/svg/787/787535.svg";
 
