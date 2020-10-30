@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/uni-nav/static/css/main.43bbe962.chunk.css",
-    "main.js": "/uni-nav/static/js/main.37203f50.chunk.js",
-    "main.js.map": "/uni-nav/static/js/main.37203f50.chunk.js.map",
+    "main.js": "/uni-nav/static/js/main.bbdd624d.chunk.js",
+    "main.js.map": "/uni-nav/static/js/main.bbdd624d.chunk.js.map",
     "runtime-main.js": "/uni-nav/static/js/runtime-main.ce9b82a1.js",
     "runtime-main.js.map": "/uni-nav/static/js/runtime-main.ce9b82a1.js.map",
     "static/css/2.6eff3e32.chunk.css": "/uni-nav/static/css/2.6eff3e32.chunk.css",
     "static/js/2.c3431d72.chunk.js": "/uni-nav/static/js/2.c3431d72.chunk.js",
     "static/js/2.c3431d72.chunk.js.map": "/uni-nav/static/js/2.c3431d72.chunk.js.map",
     "index.html": "/uni-nav/index.html",
-    "precache-manifest.a8a87abf54448c6eb334722de4e9b6f2.js": "/uni-nav/precache-manifest.a8a87abf54448c6eb334722de4e9b6f2.js",
+    "precache-manifest.301d0655a3a6eef68e4edc6ddabccb1d.js": "/uni-nav/precache-manifest.301d0655a3a6eef68e4edc6ddabccb1d.js",
     "service-worker.js": "/uni-nav/service-worker.js",
     "static/css/2.6eff3e32.chunk.css.map": "/uni-nav/static/css/2.6eff3e32.chunk.css.map",
     "static/css/main.43bbe962.chunk.css.map": "/uni-nav/static/css/main.43bbe962.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.6eff3e32.chunk.css",
     "static/js/2.c3431d72.chunk.js",
     "static/css/main.43bbe962.chunk.css",
-    "static/js/main.37203f50.chunk.js"
+    "static/js/main.bbdd624d.chunk.js"
   ]
 }
