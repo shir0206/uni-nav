@@ -73,24 +73,10 @@ function App() {
   };
 
   const panTo = useCallback(({ lat, lng }) => {
-    // setMarkers((current) => [
-    //   ...current,
-    //   {
-    //     lat: lat,
-    //     lng: lng,
-    //     time: new Date(),
-    //   },
-    // ]);
-
     setUserLocation({ lat, lng });
 
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(20);
-  }, []);
-
-  const panTo2 = useCallback(({ lat, lng }) => {
-    mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(18);
+    mapRef.current.setZoom(19);
   }, []);
 
   if (loadError) return "Error loading maps";

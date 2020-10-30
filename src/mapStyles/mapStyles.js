@@ -11,7 +11,7 @@ export default [
           hue: "#1900ff",
         },
         {
-          color: "#c0e8e8",
+          color: "#bfead5",
         },
       ],
     },

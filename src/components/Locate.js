@@ -8,10 +8,6 @@ export const Locate = ({ panTo, options }) => {
     enableHighAccuracy: true,
   };
 
-  function success() {}
-  function error() {}
-  function options() {}
-
   return (
     <button
       className="locate"
