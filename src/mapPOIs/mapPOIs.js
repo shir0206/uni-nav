@@ -1,7 +1,7 @@
 export default [
   {
     id: "1",
-    location: { lat: "32.759852654767", lng: "35.0223930358948" },
+    location: { lat: 32.759852654767, lng: 35.0223930358948 },
     type: "area",
     name: "1",
     img: "1",
@@ -9,7 +9,7 @@ export default [
   },
   {
     id: "2",
-    location: { lat: "32.7599465689222", lng: "35.0208494110026" },
+    location: { lat: 32.7599465689222, lng: 35.0208494110026 },
     type: "area",
     name: "2",
     img: "2",
@@ -17,7 +17,7 @@ export default [
   },
   {
     id: "3",
-    location: { lat: "32.7592323767394", lng: "35.0216806036188" },
+    location: { lat: 32.7592323767394, lng: 35.0216806036188 },
     type: "area",
     name: "3",
     img: "3",
@@ -25,7 +25,7 @@ export default [
   },
   {
     id: "4",
-    location: { lat: "32.760306", lng: "35.020382" },
+    location: { lat: 32.760306, lng: 35.020382 },
     type: "area",
     name: "4",
     img: "15",
@@ -33,7 +33,7 @@ export default [
   },
   {
     id: "5",
-    location: { lat: "32.7605835160928", lng: "35.0218254101482" },
+    location: { lat: 32.7605835160928, lng: 35.0218254101482 },
     type: "area",
     name: "5",
     img: "4",
@@ -41,7 +41,7 @@ export default [
   },
   {
     id: "6",
-    location: { lat: "32.7586747310855", lng: "35.0217654032939" },
+    location: { lat: 32.7586747310855, lng: 35.0217654032939 },
     type: "area",
     name: "6",
     img: "5",
@@ -49,7 +49,7 @@ export default [
   },
   {
     id: "7",
-    location: { lat: "32.7580447864327", lng: "35.0237045947527" },
+    location: { lat: 32.7580447864327, lng: 35.0237045947527 },
     type: "tourist",
     name: "7",
     img: "6",
@@ -57,7 +57,7 @@ export default [
   },
   {
     id: "8",
-    location: { lat: "32.7594507060252", lng: "35.0216799312722" },
+    location: { lat: 32.7594507060252, lng: 35.0216799312722 },
     type: "bench",
     name: "8",
     img: "",
@@ -65,7 +65,7 @@ export default [
   },
   {
     id: "9",
-    location: { lat: "32.7594932413072", lng: "35.0214790674772" },
+    location: { lat: 32.7594932413072, lng: 35.0214790674772 },
     type: "bench",
     name: "9",
     img: "",
@@ -73,7 +73,7 @@ export default [
   },
   {
     id: "10",
-    location: { lat: "32.7594542657952", lng: "35.0213091312899" },
+    location: { lat: 32.7594542657952, lng: 35.0213091312899 },
     type: "bench",
     name: "10",
     img: "",
@@ -81,7 +81,7 @@ export default [
   },
   {
     id: "11",
-    location: { lat: "32.7596544758423", lng: "35.0213667012038" },
+    location: { lat: 32.7596544758423, lng: 35.0213667012038 },
     type: "bench",
     name: "11",
     img: "",
@@ -89,7 +89,7 @@ export default [
   },
   {
     id: "12",
-    location: { lat: "32.7594997102279", lng: "35.0213560276607" },
+    location: { lat: 32.7594997102279, lng: 35.0213560276607 },
     type: "bench",
     name: "12",
     img: "",
@@ -97,7 +97,7 @@ export default [
   },
   {
     id: "13",
-    location: { lat: "32.7594032817133", lng: "35.0214552831551" },
+    location: { lat: 32.7594032817133, lng: 35.0214552831551 },
     type: "bench",
     name: "13",
     img: "",
@@ -105,7 +105,7 @@ export default [
   },
   {
     id: "14",
-    location: { lat: "32.7593985241907", lng: "35.0216430362428" },
+    location: { lat: 32.7593985241907, lng: 35.0216430362428 },
     type: "bench",
     name: "14",
     img: "",
@@ -113,7 +113,7 @@ export default [
   },
   {
     id: "15",
-    location: { lat: "32.7594142760234", lng: "35.0217842289783" },
+    location: { lat: 32.7594142760234, lng: 35.0217842289783 },
     type: "bench",
     name: "15",
     img: "",
@@ -121,7 +121,7 @@ export default [
   },
   {
     id: "16",
-    location: { lat: "32.7593280071112", lng: "35.0216754769756" },
+    location: { lat: 32.7593280071112, lng: 35.0216754769756 },
     type: "bench",
     name: "16",
     img: "",
@@ -129,7 +129,7 @@ export default [
   },
   {
     id: "17",
-    location: { lat: "32.7603064", lng: "35.0206637" },
+    location: { lat: 32.7603064, lng: 35.0206637 },
     type: "picnic-table",
     name: "17",
     img: "16",
@@ -137,7 +137,7 @@ export default [
   },
   {
     id: "18",
-    location: { lat: "32.760492170103", lng: "35.0222804187132" },
+    location: { lat: 32.760492170103, lng: 35.0222804187132 },
     type: "picnic-table",
     name: "18",
     img: "14",
@@ -145,7 +145,7 @@ export default [
   },
   {
     id: "19",
-    location: { lat: "32.7584172500081", lng: "35.0217915407385" },
+    location: { lat: 32.7584172500081, lng: 35.0217915407385 },
     type: "statue",
     name: "19",
     img: "7",
@@ -153,7 +153,7 @@ export default [
   },
   {
     id: "20",
-    location: { lat: "32.7591997275392", lng: "35.0221845259047" },
+    location: { lat: 32.7591997275392, lng: 35.0221845259047 },
     type: "statue",
     name: "20",
     img: "8",
@@ -161,7 +161,7 @@ export default [
   },
   {
     id: "21",
-    location: { lat: "32.7596161969653", lng: "35.0209926221255" },
+    location: { lat: 32.7596161969653, lng: 35.0209926221255 },
     type: "statue",
     name: "21",
     img: "9",
@@ -169,7 +169,7 @@ export default [
   },
   {
     id: "22",
-    location: { lat: "32.7589039896424", lng: "35.0218407900494" },
+    location: { lat: 32.7589039896424, lng: 35.0218407900494 },
     type: "statue",
     name: "22",
     img: "10",
@@ -177,7 +177,7 @@ export default [
   },
   {
     id: "23",
-    location: { lat: "32.7599114081362", lng: "35.0224348891075" },
+    location: { lat: 32.7599114081362, lng: 35.0224348891075 },
     type: "statue",
     name: "23",
     img: "11",
@@ -185,7 +185,7 @@ export default [
   },
   {
     id: "24",
-    location: { lat: "32.7601157794675", lng: "35.0220610669045" },
+    location: { lat: 32.7601157794675, lng: 35.0220610669045 },
     type: "statue",
     name: "24",
     img: "12",
@@ -193,7 +193,7 @@ export default [
   },
   {
     id: "25",
-    location: { lat: "32.7593874652566", lng: "35.0220849350983" },
+    location: { lat: 32.7593874652566, lng: 35.0220849350983 },
     type: "statue",
     name: "25",
     img: "13",

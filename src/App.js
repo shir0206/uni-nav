@@ -12,11 +12,13 @@ import { InfoRoute } from "./components/InfoRoute";
 import { InfoPOI } from "./components/InfoPOI";
 import ConnectDB from "./connectDB/connectDB";
 
+import mapPOIs from "./mapPOIs/mapPOIs";
 import mapStyles from "./mapStyles/mapStyles";
 
 import "./App.css";
 
 function App() {
+  const [pois, setPois] = useState(mapPOIs);
   const [markers, setMarkers] = useState([]);
   const [userLocation, setUserLocation] = useState(null);
   const [selected, setSelected] = useState(null);
@@ -68,8 +70,8 @@ function App() {
   };
 
   const center = {
-    lat: 32.761987,
-    lng: 35.018321,
+    lat: 32.760803,
+    lng: 35.020159,
   };
 
   const panTo = useCallback(({ lat, lng }) => {
@@ -100,7 +102,11 @@ function App() {
       >
         <Routes setSelectedRoute={setSelectedRoute}></Routes>
 
-        <POIs markers={markers} setSelected={setSelected}></POIs>
+        <POIs
+          markers={markers}
+          setSelected={setSelected}
+          pois={pois}
+        ></POIs>
 
         <InfoPOI selected={selected} setSelected={setSelected}></InfoPOI>
 
