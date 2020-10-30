@@ -26,12 +26,17 @@ function App() {
 
   const [timer, setTimer] = useState(null);
 
+  const [center, setCenter] = useState({
+    lat: 32.760803,
+    lng: 35.020159,
+  });
+
   const libraries = ["places"];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer(new Date());
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -78,13 +83,9 @@ function App() {
     height: "100vh",
   };
 
-  const center = {
-    lat: 32.760803,
-    lng: 35.020159,
-  };
-
   const panTo = useCallback(({ lat, lng }) => {
     setUserLocation({ lat, lng });
+    setCenter({ lat, lng });
 
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(18);
