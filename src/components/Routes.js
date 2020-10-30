@@ -59,7 +59,7 @@ export const Routes = (props) => {
           console.log("roadA");
         }}
         options={{
-          strokeColor: "#FF69B4",
+          strokeColor: "#ff00ff",
           strokeOpacity: 0,
           strokeWeight: 8,
           icons: [
@@ -79,7 +79,7 @@ export const Routes = (props) => {
           console.log("roadB");
         }}
         options={{
-          strokeColor: "#00FF00",
+          strokeColor: "#00ffff",
           strokeOpacity: 0.5,
           strokeWeight: 14,
           icons: [
@@ -99,7 +99,7 @@ export const Routes = (props) => {
           console.log("roadC");
         }}
         options={{
-          strokeColor: "#FFFF00",
+          strokeColor: "#ffff00",
           strokeOpacity: 1,
           strokeWeight: 4,
           icons: [
