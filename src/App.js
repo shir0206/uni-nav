@@ -79,7 +79,7 @@ function App() {
   // map size style
   const mapContainerStyle = {
     width: "100vw",
-    height: "100vh",
+    height: "95vh",
   };
 
   const panTo = useCallback(({ lat, lng }) => {
