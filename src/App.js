@@ -7,7 +7,7 @@ import { MapTitle } from "./components/MapTitle";
 import { Search } from "./components/Search";
 import { Routes } from "./components/Routes";
 import { POIs } from "./components/POIs";
-import { UserLocation } from "./components/UserLocation";
+import { UserLocationTimer } from "./components/UserLocationTimer";
 import { InfoRoute } from "./components/InfoRoute";
 import { InfoPOI } from "./components/InfoPOI";
 import ConnectDB from "./connectDB/connectDB";
@@ -23,8 +23,7 @@ function App() {
   const [userLocation, setUserLocation] = useState(null);
   const [selected, setSelected] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
-
-  const [timer, setTimer] = useState(null);
+  const [locate, setLocate] = useState(false);
 
   const [center, setCenter] = useState({
     lat: 32.760803,
@@ -33,12 +32,12 @@ function App() {
 
   const libraries = ["places"];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer(new Date());
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setTimer(new Date().getTime());
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   // styles: imported
   // disableDefaultUI: View Butons: (Map)/(Satellite)
@@ -100,7 +99,7 @@ function App() {
 
       <Search></Search>
 
-      {timer && <Locate panTo={panTo} options={options}></Locate>}
+      <Locate panTo={panTo} locate={locate} setLocate={setLocate}></Locate>
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
@@ -121,7 +120,12 @@ function App() {
           setSelectedRoute={setSelectedRoute}
         ></InfoRoute>
 
-        <UserLocation userLocation={userLocation}></UserLocation>
+        {locate && (
+          <UserLocationTimer
+            userLocation={userLocation}
+            setUserLocation={setUserLocation}
+          ></UserLocationTimer>
+        )}
       </GoogleMap>
     </div>
   );

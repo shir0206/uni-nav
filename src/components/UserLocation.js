@@ -8,6 +8,13 @@ export const UserLocation = (props) => {
   const userLocationIcon =
     "https://www.flaticon.com/svg/static/icons/svg/1831/1831908.svg";
 
+  if (props.userLocation.lat && props.userLocation.lng) {
+    console.log(
+      "render UserLocation: ",
+      props.userLocation.lat,
+      props.userLocation.lng
+    );
+  }
   // url = svg source
   // scaledSize = icon size
   // origin = icon location reltivly the mouse click
