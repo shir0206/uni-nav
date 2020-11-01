@@ -10,8 +10,7 @@ export const Locate = ({ panTo, setLocate, locate }) => {
 
   // navigator.geolocation.getCurrentPosition(success,error,options);
 
-  return (
-    // <>
+  //return ( <>
     //   {navigator.geolocation.getCurrentPosition(
     //     (position) => {
     //       panTo({
@@ -26,7 +25,10 @@ export const Locate = ({ panTo, setLocate, locate }) => {
     //     },
     //     positionOptions
     //   )}
-    // </>
+    // </>);
+    
+  return (
+    
 
     <button
       className="locate"
