@@ -38,7 +38,7 @@ export const InfoRoute = (props) => {
           </div>
         </InfoWindow>
       ) : (
-        console.log("fail")
+        console.log("InfoRoute selectedRoute: ", props.selectedRoute)
       )}
     </>
   );

@@ -13,23 +13,27 @@ export const POIs = (props) => {
   // origin = icon location reltivly the mouse click
   // anchor = icon location reltivly the mouse click
 
+
+
+  // {props.markers.map((marker) => (
+  //   <Marker
+  //     key={marker.time.toISOString()}
+  //     position={{ lat: marker.lat, lng: marker.lng }}
+  //     onClick={() => {
+  //       props.setSelected(marker);
+  //     }}
+  //     icon={{
+  //       url: markerIcon,
+  //       scaledSize: new window.google.maps.Size(30, 30),
+  //       origin: new window.google.maps.Point(0, 0),
+  //       anchor: new window.google.maps.Point(15, 15),
+  //     }}
+  //   />
+  // ))}
+
   return (
     <>
-      {/* {props.markers.map((marker) => (
-        <Marker
-          key={marker.time.toISOString()}
-          position={{ lat: marker.lat, lng: marker.lng }}
-          onClick={() => {
-            props.setSelected(marker);
-          }}
-          icon={{
-            url: markerIcon,
-            scaledSize: new window.google.maps.Size(30, 30),
-            origin: new window.google.maps.Point(0, 0),
-            anchor: new window.google.maps.Point(15, 15),
-          }}
-        />
-      ))} */}
+     
       {props.pois.map((poi) => (
         <Marker
           key={poi.id}

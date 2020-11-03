@@ -4,7 +4,6 @@ import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 import { Locate } from "./components/Locate";
 import { MapTitle } from "./components/MapTitle";
-import { Search } from "./components/Search";
 import { Routes } from "./components/Routes";
 import { POIs } from "./components/POIs";
 import { UserLocationTimer } from "./components/UserLocationTimer";
@@ -79,7 +78,7 @@ function App() {
   // map size style
   const mapContainerStyle = {
     width: "100vw",
-    height: "95vh",
+    height: "100vh",
   };
 
   const panTo = useCallback(({ lat, lng }) => {
@@ -97,7 +96,6 @@ function App() {
     <div className="App">
       <MapTitle></MapTitle>
 
-      <Search></Search>
 
       <Locate panTo={panTo} locate={locate} setLocate={setLocate}></Locate>
 
@@ -126,9 +124,10 @@ function App() {
             setUserLocation={setUserLocation}
           ></UserLocationTimer>
         )}
+
       </GoogleMap>
     </div>
   );
 }
 
-export default App;
+export default App; 

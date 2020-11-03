@@ -36,7 +36,7 @@ export const InfoPOI = (props) => {
           </div>
         </InfoWindow>
       ) : (
-        console.log("fail")
+        console.log("InfoPOI selected: ", props.selected)
       )}
     </>
   );
