@@ -8,7 +8,7 @@ export const UserLocation = (props) => {
   const userLocationIcon =
     "https://www.flaticon.com/svg/static/icons/svg/1831/1831908.svg";
 
-  if (props.userLocation.lat && props.userLocation.lng) {
+  if (props.userLocation && props.userLocation) {
     console.log(
       "render UserLocation: ",
       props.userLocation.lat,

@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./locate.css";
 
-export const Locate = ({ panTo, setLocate, locate }) => {
-  const positionOptions = {
-    timeout: Infinity,
-    maximumAge: 0,
-    enableHighAccuracy: true,
-  };
+export const Locate = (props) => {
+  
 
   // navigator.geolocation.getCurrentPosition(success,error,options);
 
@@ -33,22 +29,7 @@ export const Locate = ({ panTo, setLocate, locate }) => {
     <button
       className="locate"
       onClick={() => {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            panTo({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            });
-
-            console.log("your loction: ", position);
-          },
-          () => {
-            console.log("your loction not found");
-          },
-          positionOptions
-        );
-
-        setLocate(!locate);
+        props.setLocate(!props.locate);
       }}
     >
       <img

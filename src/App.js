@@ -96,7 +96,6 @@ function App() {
     <div className="App">
       <MapTitle></MapTitle>
 
-
       <Locate panTo={panTo} locate={locate} setLocate={setLocate}></Locate>
 
       <GoogleMap
@@ -122,12 +121,12 @@ function App() {
           <UserLocationTimer
             userLocation={userLocation}
             setUserLocation={setUserLocation}
+            panTo={panTo}
           ></UserLocationTimer>
         )}
-
       </GoogleMap>
     </div>
   );
 }
 
-export default App; 
+export default App;
