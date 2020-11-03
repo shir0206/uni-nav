@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0268766723a192a13c77e90acbd5a28c",
+    "revision": "1f4c092fe1e3d01d018d8ffa8a705e32",
     "url": "/uni-nav/index.html"
   },
   {
-    "revision": "50aa7fae61e98d0efa5b",
-    "url": "/uni-nav/static/css/main.38f08fd4.chunk.css"
+    "revision": "5061022cb73b20c04152",
+    "url": "/uni-nav/static/css/main.c4e2c143.chunk.css"
   },
   {
     "revision": "a025ac64188862e09911",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/uni-nav/static/js/2.e83eca88.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "50aa7fae61e98d0efa5b",
-    "url": "/uni-nav/static/js/main.03ac41a4.chunk.js"
+    "revision": "5061022cb73b20c04152",
+    "url": "/uni-nav/static/js/main.c09dbbab.chunk.js"
   },
   {
     "revision": "2ebad56fdb67ddfcb051",
