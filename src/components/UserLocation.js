@@ -6,7 +6,7 @@ export const UserLocation = (props) => {
   // Add manual marker on the map.
 
   const userLocationIcon =
-    "https://www.flaticon.com/svg/static/icons/svg/1831/1831908.svg";
+    "https://www.flaticon.com/svg/static/icons/svg/3528/3528209.svg";
 
   if (props.userLocation && props.userLocation) {
     console.log(
