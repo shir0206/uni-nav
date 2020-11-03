@@ -7,7 +7,7 @@ export const UserLocationTimer = (props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimer(new Date().getTime());
+      setTimer(new Date());
       console.log("UserLocationTimer", timer);
       locateMe();
     }, 2000);
