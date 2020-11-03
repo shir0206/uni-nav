@@ -1,27 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4abf3ee0b1ae0646956950b5d776a008",
+    "revision": "0268766723a192a13c77e90acbd5a28c",
     "url": "/uni-nav/index.html"
   },
   {
-    "revision": "6e903affae873412b473",
-    "url": "/uni-nav/static/css/2.6eff3e32.chunk.css"
+    "revision": "50aa7fae61e98d0efa5b",
+    "url": "/uni-nav/static/css/main.38f08fd4.chunk.css"
   },
   {
-    "revision": "4b37e888ed041e0ba81e",
-    "url": "/uni-nav/static/css/main.f5c9792e.chunk.css"
-  },
-  {
-    "revision": "6e903affae873412b473",
-    "url": "/uni-nav/static/js/2.c92ef198.chunk.js"
+    "revision": "a025ac64188862e09911",
+    "url": "/uni-nav/static/js/2.e83eca88.chunk.js"
   },
   {
     "revision": "bfd04eb851fbc8ea43c375cc9d698376",
-    "url": "/uni-nav/static/js/2.c92ef198.chunk.js.LICENSE.txt"
+    "url": "/uni-nav/static/js/2.e83eca88.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4b37e888ed041e0ba81e",
-    "url": "/uni-nav/static/js/main.9b71248c.chunk.js"
+    "revision": "50aa7fae61e98d0efa5b",
+    "url": "/uni-nav/static/js/main.03ac41a4.chunk.js"
   },
   {
     "revision": "2ebad56fdb67ddfcb051",

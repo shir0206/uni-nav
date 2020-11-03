@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/uni-nav/static/css/main.f5c9792e.chunk.css",
-    "main.js": "/uni-nav/static/js/main.9b71248c.chunk.js",
-    "main.js.map": "/uni-nav/static/js/main.9b71248c.chunk.js.map",
+    "main.css": "/uni-nav/static/css/main.38f08fd4.chunk.css",
+    "main.js": "/uni-nav/static/js/main.03ac41a4.chunk.js",
+    "main.js.map": "/uni-nav/static/js/main.03ac41a4.chunk.js.map",
     "runtime-main.js": "/uni-nav/static/js/runtime-main.ce9b82a1.js",
     "runtime-main.js.map": "/uni-nav/static/js/runtime-main.ce9b82a1.js.map",
-    "static/css/2.6eff3e32.chunk.css": "/uni-nav/static/css/2.6eff3e32.chunk.css",
-    "static/js/2.c92ef198.chunk.js": "/uni-nav/static/js/2.c92ef198.chunk.js",
-    "static/js/2.c92ef198.chunk.js.map": "/uni-nav/static/js/2.c92ef198.chunk.js.map",
+    "static/js/2.e83eca88.chunk.js": "/uni-nav/static/js/2.e83eca88.chunk.js",
+    "static/js/2.e83eca88.chunk.js.map": "/uni-nav/static/js/2.e83eca88.chunk.js.map",
     "index.html": "/uni-nav/index.html",
-    "precache-manifest.301e3bbcf9770c346c7014c845c67d60.js": "/uni-nav/precache-manifest.301e3bbcf9770c346c7014c845c67d60.js",
+    "precache-manifest.bc9f6e9a17531512e846b5e9e7a20c38.js": "/uni-nav/precache-manifest.bc9f6e9a17531512e846b5e9e7a20c38.js",
     "service-worker.js": "/uni-nav/service-worker.js",
-    "static/css/2.6eff3e32.chunk.css.map": "/uni-nav/static/css/2.6eff3e32.chunk.css.map",
-    "static/css/main.f5c9792e.chunk.css.map": "/uni-nav/static/css/main.f5c9792e.chunk.css.map",
-    "static/js/2.c92ef198.chunk.js.LICENSE.txt": "/uni-nav/static/js/2.c92ef198.chunk.js.LICENSE.txt",
+    "static/css/main.38f08fd4.chunk.css.map": "/uni-nav/static/css/main.38f08fd4.chunk.css.map",
+    "static/js/2.e83eca88.chunk.js.LICENSE.txt": "/uni-nav/static/js/2.e83eca88.chunk.js.LICENSE.txt",
     "static/media/1.jpeg": "/uni-nav/static/media/1.96ec2b94.jpeg",
     "static/media/10.jpeg": "/uni-nav/static/media/10.6b4380c0.jpeg",
     "static/media/11.jpeg": "/uni-nav/static/media/11.dbcbac2a.jpeg",
@@ -33,9 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ce9b82a1.js",
-    "static/css/2.6eff3e32.chunk.css",
-    "static/js/2.c92ef198.chunk.js",
-    "static/css/main.f5c9792e.chunk.css",
-    "static/js/main.9b71248c.chunk.js"
+    "static/js/2.e83eca88.chunk.js",
+    "static/css/main.38f08fd4.chunk.css",
+    "static/js/main.03ac41a4.chunk.js"
   ]
 }
