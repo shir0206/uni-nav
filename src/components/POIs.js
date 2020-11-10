@@ -5,7 +5,7 @@ import { Marker } from "@react-google-maps/api";
 export const POIs = (props) => {
   // Add manual marker on the map.
 
-  
+
   function displayMarkerIcon(type) {
     const markerIcon =
       "https://www.flaticon.com/svg/static/icons/svg/787/787535.svg";
@@ -19,8 +19,8 @@ export const POIs = (props) => {
       const areaIcon =
       "https://www.flaticon.com/svg/static/icons/svg/972/972263.svg";
 
-      const touristIcon =
-      "https://www.flaticon.com/svg/static/icons/svg/2965/2965715.svg";
+      const historyIcon =
+      "https://www.flaticon.com/svg/static/icons/svg/1277/1277727.svg";
 
       const statueIcon =
       "https://www.flaticon.com/svg/static/icons/svg/3205/3205261.svg";
@@ -30,8 +30,8 @@ export const POIs = (props) => {
         return benchIcon;
       case "area":
         return areaIcon;
-      case "tourist":
-        return touristIcon;
+      case "history":
+        return historyIcon;
       case "statue":
         return statueIcon;
       case "picnic-table":
