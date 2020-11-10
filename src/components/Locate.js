@@ -2,30 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./locate.css";
 
 export const Locate = (props) => {
-  
-
-  // navigator.geolocation.getCurrentPosition(success,error,options);
-
-  //return ( <>
-    //   {navigator.geolocation.getCurrentPosition(
-    //     (position) => {
-    //       panTo({
-    //         lat: position.coords.latitude,
-    //         lng: position.coords.longitude,
-    //       });
-
-    //       console.log("your loction: ", position);
-    //     },
-    //     () => {
-    //       console.log("your loction not found");
-    //     },
-    //     positionOptions
-    //   )}
-    // </>);
-    
   return (
-    
-
     <button
       className="locate"
       onClick={() => {
