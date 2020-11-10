@@ -3,6 +3,7 @@ import React, { useState, useCallback, useRef, useEffect } from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 import { Locate } from "./components/Locate";
+import { Settings } from "./components/Settings";
 import { MapTitle } from "./components/MapTitle";
 import { Routes } from "./components/Routes";
 import { POIs } from "./components/POIs";
@@ -95,6 +96,8 @@ function App() {
   return (
     <div className="App">
       <MapTitle></MapTitle>
+
+      <Settings></Settings>
 
       <Locate panTo={panTo} locate={locate} setLocate={setLocate}></Locate>
 

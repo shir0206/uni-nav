@@ -130,7 +130,7 @@ export default [
   {
     id: "17",
     location: { lat: 32.7603064, lng: 35.0206637 },
-    type: "picnic-table",
+    type: "table",
     name: "17",
     img: "16",
     desc: "ספסל-שולחן",
@@ -138,7 +138,7 @@ export default [
   {
     id: "18",
     location: { lat: 32.760492170103, lng: 35.0222804187132 },
-    type: "picnic-table",
+    type: "table",
     name: "18",
     img: "14",
     desc: "ספסל-שולחן",
@@ -563,7 +563,7 @@ export default [
   {
     id: "71",
     location: { lat: 32.762396, lng: 35.019947 },
-    type: "picnic-table",
+    type: "table",
     name: "71",
     img: "",
     desc: "ספסל שולחן",
@@ -571,7 +571,7 @@ export default [
   {
     id: "72",
     location: { lat: 32.762387, lng: 35.02 },
-    type: "picnic-table",
+    type: "table",
     name: "72",
     img: "",
     desc: "ספסל שולחן עם קירוי קל",
@@ -579,7 +579,7 @@ export default [
   {
     id: "73",
     location: { lat: 32.762314, lng: 35.020055 },
-    type: "picnic-table",
+    type: "table",
     name: "73",
     img: "",
     desc: "ספסל שולחן עם קירוי קל",

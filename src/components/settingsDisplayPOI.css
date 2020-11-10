@@ -1,0 +1,10 @@
+.display-poi {
+  display: flex;
+  flex-direction: column;
+  direction: lrt;
+}
+
+.checkbox-icon {
+  width: 1em;
+  height: 1em;
+}

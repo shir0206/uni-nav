@@ -13,7 +13,7 @@ export const POIs = (props) => {
     const benchIcon =
       "https://www.flaticon.com/svg/static/icons/svg/183/183449.svg";
 
-      const picnicTableIcon =
+      const tableIcon =
       "https://www.flaticon.com/svg/static/icons/svg/3113/3113709.svg";
 
       const areaIcon =
@@ -34,8 +34,8 @@ export const POIs = (props) => {
         return historyIcon;
       case "statue":
         return statueIcon;
-      case "picnic-table":
-        return picnicTableIcon;
+      case "table":
+        return tableIcon;
     }
     return markerIcon;
   }
