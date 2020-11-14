@@ -21,7 +21,10 @@ export const Settings = (props) => {
 
       {settings && (
         <div className="settings">
-          <SettingsDisplayPOI></SettingsDisplayPOI>
+          <SettingsDisplayPOI
+            displayPoiType={props.displayPoiType}
+            setDisplayPoiType={props.setDisplayPoiType}
+          ></SettingsDisplayPOI>
 
           <button
             className="save"

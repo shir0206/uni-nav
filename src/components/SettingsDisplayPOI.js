@@ -1,20 +1,17 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./settingsDisplayPOI.css";
-
 export const SettingsDisplayPOI = (props) => {
-  const [checkedItems, setCheckedItems] = useState({}); //plain object as state
-
   const handleChange = (event) => {
     // updating an object instead of a Map
-    setCheckedItems({
-      ...checkedItems,
+    props.setDisplayPoiType({
+      ...props.displayPoiType,
       [event.target.name]: event.target.checked,
     });
   };
 
   useEffect(() => {
-    console.log("checkedItems: ", checkedItems);
-  }, [checkedItems]);
+    console.log("props.displayPoiType: ", props.displayPoiType);
+  }, [props.displayPoiType]);
 
   const markerIcon =
     "https://www.flaticon.com/svg/static/icons/svg/787/787535.svg";
@@ -79,22 +76,15 @@ export const SettingsDisplayPOI = (props) => {
       {checkboxes.map((item) => (
         <label key={item.key}>
           {item.label}
-          <img
-            src={item.icon}
-            alt={item.name}
-            className="checkbox-icon"
-          ></img>
+          <img src={item.icon} alt={item.name} className="checkbox-icon"></img>
           <input
             type="checkbox"
             name={item.name}
-            checked={checkedItems[item.name]}
+            checked={props.displayPoiType[item.name]}
             onChange={handleChange}
           />
-          
         </label>
       ))}
-
-
     </div>
   );
 };

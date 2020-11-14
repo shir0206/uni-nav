@@ -24,6 +24,14 @@ function App() {
   const [selected, setSelected] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [locate, setLocate] = useState(false);
+  const [displayPoiType, setDisplayPoiType] = useState({
+    bench: false,
+    area: true,
+    table: false,
+    statue: true,
+    lookout: true,
+    history: true,
+  });
 
   const [center, setCenter] = useState({
     lat: 32.760803,
@@ -31,13 +39,6 @@ function App() {
   });
 
   const libraries = ["places"];
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setTimer(new Date().getTime());
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   // styles: imported
   // disableDefaultUI: View Butons: (Map)/(Satellite)
@@ -97,7 +98,7 @@ function App() {
     <div className="App">
       <MapTitle></MapTitle>
 
-      <Settings></Settings>
+      <Settings displayPoiType={displayPoiType} setDisplayPoiType={setDisplayPoiType}></Settings>
 
       <Locate panTo={panTo} locate={locate} setLocate={setLocate}></Locate>
 
@@ -111,7 +112,12 @@ function App() {
       >
         <Routes setSelectedRoute={setSelectedRoute}></Routes>
 
-        <POIs markers={markers} setSelected={setSelected} pois={pois}></POIs>
+        <POIs
+          markers={markers}
+          setSelected={setSelected}
+          pois={pois}
+          displayPoiType={displayPoiType}
+        ></POIs>
 
         <InfoPOI selected={selected} setSelected={setSelected}></InfoPOI>
 
