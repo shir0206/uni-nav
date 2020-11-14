@@ -75,6 +75,13 @@ function App() {
   //map from Google Maps
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
+
+
+
+
+    // GoogleMap.event.addListener(map, 'dragend', function() { alert('map dragged'); } );
+    
+
   }, []);
 
   // map size style
@@ -94,6 +101,8 @@ function App() {
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading maps";
 
+  
+
   return (
     <div className="App">
       <MapTitle></MapTitle>
@@ -109,6 +118,9 @@ function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
+        onDrag={((map) => console.log("dragged"))}
+        onDragEnd={((map) => console.log("dragged end"))}
+ 
       >
         <Routes setSelectedRoute={setSelectedRoute}></Routes>
 
