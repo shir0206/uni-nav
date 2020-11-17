@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { UserLocation } from "./UserLocation";
 import { ConsoleDemo } from "./ConsoleDemo";
 
@@ -11,6 +11,7 @@ export const UserLocationTimer = (props) => {
       console.log("UserLocationTimer", timer);
       locateMe();
     }, 2000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -23,6 +24,11 @@ export const UserLocationTimer = (props) => {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        props.setUserLocation(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
         props.panTo({
           lat: position.coords.latitude,
           lng: position.coords.longitude,
@@ -35,24 +41,14 @@ export const UserLocationTimer = (props) => {
       },
       positionOptions
     );
-
   }
+
   return (
     <>
-      <div className="consoleDemoContainer">
-        <div className="consoleDemo">{" Timer: " + timer} </div>
-        <div className="consoleDemo">
-          {props.userLocation &&
-            " Location: " +
-              " LAT: " +
-              props.userLocation.lat +
-              " LNG: " +
-              props.userLocation.lng}
-        </div>
-        <div className="consoleDemo">
-          {!props.userLocation && " Location: " + " LAT: null " + " LNG: null "}
-        </div>
-      </div>
+      <ConsoleDemo
+        userLocation={props.userLocation}
+        timer={timer}
+      ></ConsoleDemo>
 
       {timer && <UserLocation userLocation={props.userLocation}></UserLocation>}
     </>

@@ -6,7 +6,9 @@ export const Locate = (props) => {
     <button
       className="locate"
       onClick={() => {
-        props.setLocate(!props.locate);
+        props.setLocate(true);
+        props.setIsDragged(false);
+        console.log("Locate", "false");
       }}
     >
       <img
