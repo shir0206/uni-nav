@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { UserLocation } from "./UserLocation";
+import { UserLocationMarker } from "./UserLocationMarker";
 import { ConsoleDemo } from "./ConsoleDemo";
 
 export const UserLocationTimer = (props) => {
@@ -24,7 +24,7 @@ export const UserLocationTimer = (props) => {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        props.setUserLocation(
+        props.setUserLocationCoords(
           position.coords.latitude,
           position.coords.longitude
         );
@@ -46,11 +46,15 @@ export const UserLocationTimer = (props) => {
   return (
     <>
       <ConsoleDemo
-        userLocation={props.userLocation}
+        userLocationCoords={props.userLocationCoords}
         timer={timer}
       ></ConsoleDemo>
 
-      {timer && <UserLocation userLocation={props.userLocation}></UserLocation>}
+      {timer && (
+        <UserLocationMarker
+          userLocationCoords={props.userLocationCoords}
+        ></UserLocationMarker>
+      )}
     </>
   );
 };

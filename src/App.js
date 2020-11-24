@@ -8,7 +8,7 @@ import { MapTitle } from "./components/MapTitle";
 import { Routes } from "./components/Routes";
 import { POIs } from "./components/POIs";
 import { UserLocationTimer } from "./components/UserLocationTimer";
-import { UserLocation } from "./components/UserLocation";
+import { UserLocationMarker } from "./components/UserLocationMarker";
 
 import { InfoRoute } from "./components/InfoRoute";
 import { InfoPOI } from "./components/InfoPOI";
@@ -23,7 +23,7 @@ function App() {
   const [pois, setPois] = useState(mapPOIs);
   const [markers, setMarkers] = useState([]);
   const [isDragged, setIsDragged] = useState(false);
-  const [userLocation, setUserLocation] = useState(null);
+  const [userLocationCoords, setUserLocationCoords] = useState(null);
   const [selected, setSelected] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [locate, setLocate] = useState(false);
@@ -87,9 +87,9 @@ function App() {
   };
 
   const panTo = useCallback(({ lat, lng }) => {
-    setUserLocation({ lat, lng });
+    setUserLocationCoords({ lat, lng });
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(18);
+    mapRef.current.setZoom(20);
     mapRef.current.setCenter({ lat, lng });
     console.log("isDragged", isDragged);
   }, []);
@@ -119,14 +119,11 @@ function App() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
-        onDrag={(map) => {
-          console.log("dragged");
+        onDrag={() => {
           setIsDragged(true);
         }}
-        onDragEnd={(map) => {
-          console.log("dragged end");
+        onDragEnd={() => {
           setIsDragged(true);
-          console.log(isDragged);
         }}
       >
         <Routes setSelectedRoute={setSelectedRoute}></Routes>
@@ -147,11 +144,11 @@ function App() {
 
         {locate &&
           (isDragged ? (
-            <UserLocation userLocation={userLocation}></UserLocation>
+            <UserLocationMarker userLocationCoords={userLocationCoords}></UserLocationMarker>
           ) : (
             <UserLocationTimer
-              userLocation={userLocation}
-              setUserLocation={setUserLocation}
+              userLocationCoords={userLocationCoords}
+              setUserLocationCoords={setUserLocationCoords}
               panTo={panTo}
             ></UserLocationTimer>
           ))}

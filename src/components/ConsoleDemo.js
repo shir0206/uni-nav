@@ -6,15 +6,15 @@ export const ConsoleDemo = (props) => {
     <div className="consoleDemoContainer">
       <div className="consoleDemo">{" Timer: " + props.timer} </div>
       <div className="consoleDemo">
-        {props.userLocation &&
+        {props.userLocationCoords &&
           " Location: " +
             " LAT: " +
-            props.userLocation.lat +
+            props.userLocationCoords.lat +
             " LNG: " +
-            props.userLocation.lng}
+            props.userLocationCoords.lng}
       </div>
       <div className="consoleDemo">
-        {!props.userLocation && " Location: " + " LAT: null " + " LNG: null "}
+        {!props.userLocationCoords && " Location: " + " LAT: null " + " LNG: null "}
       </div>
     </div>
   );
