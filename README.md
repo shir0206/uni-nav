@@ -1,4 +1,4 @@
-### :round_pushpin: Uni-nav  :earth_africa: [*Under development*]
+# :round_pushpin: Uni-nav  :earth_africa: [*Under development*]
 
 Initial web project made for the purpose of a guided mobile tour at Haifa University campus.
 
